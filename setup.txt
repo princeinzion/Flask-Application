@@ -1,0 +1,34 @@
+#Activate the virtual environment
+venv\Scripts\activate #Linux: source venv/bin/activate
+
+
+#set the Flask environment
+set FLASK_APP=microblog.py #Linux: export FLASK_APP=myblog.py
+
+#Run to start the server
+
+flask run
+
+
+
+#To create Migration repository
+flask db init
+
+
+# To generate a migration automatically
+flask db migrate
+
+#Apply changes to the Database
+flask db upgrade
+
+#After applying updates to the Model file, generate a new database migration
+flask db migrate -m "post table"   #'Post' is the name of the new class created.
+
+#OR
+
+#if the changes were made to an existing class
+flask db migrate -m "any appropriate description" 
+
+
+#Afterwards apply to the Database again
+flask db upgrade
